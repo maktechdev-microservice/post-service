@@ -34,7 +34,9 @@ app.post("/posts", async (req, resp) => {
 
 // receive 
 app.post("/events", (req, res) => {
-    console.log(`Event received:  ${req.body.type} by post service`)
+    console.log(`Posts service received "${req.body.type}" event`)
+
+    res.send({status: "ok from posts"})
 })
 
 
