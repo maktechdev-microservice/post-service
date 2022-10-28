@@ -32,5 +32,10 @@ app.post("/posts", async (req, resp) => {
     resp.status(201).send(posts[id])
 }); 
 
+// receive 
+app.post("/events", (req, res) => {
+    console.log(`Event received:  ${req.body.type} by post service`)
+})
+
 
 app.listen(port, () => console.log(`Posts server is listening at ${port}`));
