@@ -21,7 +21,7 @@ app.post("/posts", async (req, resp) => {
     const id = randomBytes(4).toString('hex')
     const { title, body } = req.body
     posts[id] = { id, title, body }
-    await axios.post("http://localhost:4005/events", {
+    await axios.post("http://events-clusterip-srv:4005/events", {
         type: "PostCreated",
         data: {
             id, title, body
